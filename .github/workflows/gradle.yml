@@ -59,7 +59,12 @@ jobs:
       with:
         name: app-jar
         path: build/libs/
-
+        
+    - name: Debug - List downloaded files    # ← ADD THIS
+      run: |
+        echo "Files in build/libs:"
+        ls -la build/libs/
+        
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
